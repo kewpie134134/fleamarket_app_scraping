@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import time
 import csv
 import os
+import datetime
 
 
 def search_mercari(search_words):
@@ -226,6 +227,9 @@ def read_csv():
 # ------------------------------------------------------ #
 
 
+# 処理開始時刻を記録
+start_time = datetime.datetime.now()
+
 # 0. メルカリ検索CSVファイルから読み取ったリストを格納する箱を用意
 """
 検索用CSVファイルからリストを読み込む
@@ -245,3 +249,10 @@ for i in range(len(csv_lists)):
     # 3. グラフ描画
     make_graph(csv_lists[i][0], csv_lists[i][1],
                int(csv_lists[i][2]), int(csv_lists[i][3]))
+
+# 処理終了時刻を記録
+end_time = datetime.datetime.now()
+
+# 全処理が完了するまでにかかった時間を算出
+print("All Finish!!")
+print("実行処理時間：" + str(end_time - start_time))
