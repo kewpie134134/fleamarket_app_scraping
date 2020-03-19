@@ -37,7 +37,7 @@ def search_mercari(search_words):
     df = pd.DataFrame(columns=columns)
 
     # 検索ワードを表示
-    print("Scraping...: " + search_words)
+    print("Scraping -> " + search_words)
 
     # 実行
     try:
