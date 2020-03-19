@@ -128,7 +128,11 @@ def make_graph(search_words, except_words, max_price, bins):
         num += sold
 
         # ここでパーセントを計算する
-        percent = num / all_num * 100
+        # ZeroDivisionErrorを割けるため、ゼロ値チェック
+        if (all_num == 0):
+            percent = 0
+        else:
+            percent = num / all_num * 100
 
         # 値段はMINとMAXの中央値とした
         price = (MIN + MAX + 1) / 2
