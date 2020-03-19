@@ -36,6 +36,9 @@ def search_mercari(search_words):
     # 配列名を指定する
     df = pd.DataFrame(columns=columns)
 
+    # 検索ワードを表示
+    print("Scraping...: " + search_words)
+
     # 実行
     try:
         while(True):
